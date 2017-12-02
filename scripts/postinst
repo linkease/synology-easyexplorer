@@ -1,0 +1,20 @@
+#!/bin/sh
+
+PKGNAME="easyexplorer"
+PKGPATH="/var/packages/${PKGNAME}"
+
+BINPKG=`ls -l ${PKGPATH}/target | awk -F "-> " '{print $2}'`
+
+eval $(env | grep "^SYNOPKG_PKGDEST=")
+chown -R admin.users "$SYNOPKG_PKGDEST"
+ln -s "${SYNOPKG_PKGDEST}/web" /usr/syno/synoman/webman/3rdparty/easyexplorer
+chown -R admin.users $SYNOPKG_PKGDEST
+cat >$BINPKG/bin/config.json<<EOF
+{"username":"${wizard_easyexplorer_token}","sharepath":"${wizard_EasyExplorer_path}"}
+EOF
+cat >$BINPKG/config<<EOF
+USERNAME=${wizard_easyexplorer_token}
+SHAREPATH=${wizard_EasyExplorer_path}
+
+EOF
+exit 0 

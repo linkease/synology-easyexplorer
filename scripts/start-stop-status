@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# easyexplorer package made by fw867
+# package maintained at http://www.koolshare.cn
+
+PKGNAME="easyexplorer"
+PKGPATH="/var/packages/${PKGNAME}"
+
+BINPKG=`ls -l ${PKGPATH}/target | awk -F "-> " '{print $2}'`
+
+BINPATH="bin"
+BINFILE="easyexplorer"
+BINLOG="easyexplorer.log"
+
+BINSTART=${BINPKG}/${BINPATH}/${BINFILE}
+
+gen_config(){
+	local usertoken=`cat ${BINPKG}/config|sed -n 1p|awk -F "=" '{print $2}'`
+	local userpath=`cat ${BINPKG}/config|sed -n 2p|awk -F "=" '{print $2}'`
+	cat >${BINPKG}/${BINPATH}/config.json<<EOF
+{"username":"$usertoken","sharepath":"$userpath"}
+EOF
+}
+
+case $1 in
+	start)
+		echo "Starting easyexplorer ..."
+		gen_config
+		${BINSTART} >/dev/null 2>&1 &
+		exit 0
+	;;
+	stop)
+		echo "Stopping easyexplorer ..."
+		killall ${BINFILE}
+		exit 0
+	;;
+	status)
+		ps | grep -v grep | grep ${BINPATH}/${BINFILE} > /dev/null
+		if [ $? -ne 0 ]; then
+			echo "Status: easyexplorer is not running"
+			exit 1
+		fi
+		echo "Status: easyexplorer is running"
+		exit 0
+	;;
+    log)
+        echo /root/${BINLOG}
+    ;;
+esac

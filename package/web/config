@@ -1,0 +1,12 @@
+{
+	".url": {
+		"net.reidemeister.easyexplorer": {
+			"type": "legacy",
+			"allUsers": true,
+			"title": "easyexplorer",
+			"desc": "EasyExplorer设置",
+			"icon": "images/icon_{0}.png",
+			"url": "3rdparty/easyexplorer/index.cgi"
+		}
+	}
+}
