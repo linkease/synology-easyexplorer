@@ -26,7 +26,7 @@ if ($isadmin ne "true") {
     die;
 }
 
-# default values 
+# default values
 $tmplhtml{'saved'}="";
 $tmplhtml{'USERNAME'}="";
 $tmplhtml{'SHAREPATH'}="/volume4/Downloads";
@@ -71,7 +71,7 @@ if (open (IN, "/var/packages/easyexplorer/target/config")) {
 
 # clear the log file?
 if ($action eq "clearlog") {
-    if (open (OUT, ">/var/packages/easyexplorer/target/bin/p2p-explorer.log")) {
+    if (open (OUT, ">/var/packages/easyexplorer/target/bin/easy-explorer.log")) {
 	my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
 	$year += 1900; ## $year contains no. of years since 1900, to add 1900 to make Y2K compliant
 	$dt = sprintf ("%04s-%02s-%02s %02s:%02s:%02s", $year, $mon, $mday, $hour, $min, $sec);
@@ -89,7 +89,7 @@ if ($action eq "log") {
 	    print $_;
 	}
 	close (IN);
-	if (open (IN, "/var/packages/easyexplorer/target/bin/p2p-explorer.log")) {
+	if (open (IN, "/var/packages/easyexplorer/target/bin/easy-explorer.log")) {
 	    while (<IN>) {
 		print $_;
 	    }
