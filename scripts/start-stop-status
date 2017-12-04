@@ -10,22 +10,13 @@ BINPKG=`ls -l ${PKGPATH}/target | awk -F "-> " '{print $2}'`
 
 BINPATH="bin"
 BINFILE="easyexplorer"
-BINLOG="easyexplorer.log"
+BINLOG="easy-explorer.log"
 
 BINSTART=${BINPKG}/${BINPATH}/${BINFILE}
-
-gen_config(){
-	local usertoken=`cat ${BINPKG}/config|sed -n 1p|awk -F "=" '{print $2}'`
-	local userpath=`cat ${BINPKG}/config|sed -n 2p|awk -F "=" '{print $2}'`
-	cat >${BINPKG}/${BINPATH}/config.json<<EOF
-{"username":"$usertoken","sharepath":"$userpath"}
-EOF
-}
 
 case $1 in
 	start)
 		echo "Starting easyexplorer ..."
-		gen_config
 		${BINSTART} >/dev/null 2>&1 &
 		exit 0
 	;;
@@ -35,7 +26,7 @@ case $1 in
 		exit 0
 	;;
 	status)
-		ps | grep -v grep | grep ${BINPATH}/${BINFILE} > /dev/null
+		pidof ${BINFILE} > /dev/null
 		if [ $? -ne 0 ]; then
 			echo "Status: easyexplorer is not running"
 			exit 1
@@ -44,6 +35,6 @@ case $1 in
 		exit 0
 	;;
     log)
-        echo /root/${BINLOG}
+        echo ${BINPKG}/${BINPATH}/${BINLOG}
     ;;
 esac

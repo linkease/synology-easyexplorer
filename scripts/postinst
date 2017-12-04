@@ -12,9 +12,4 @@ chown -R admin.users $SYNOPKG_PKGDEST
 cat >$BINPKG/bin/config.json<<EOF
 {"username":"${wizard_easyexplorer_token}","sharepath":"${wizard_EasyExplorer_path}"}
 EOF
-cat >$BINPKG/config<<EOF
-USERNAME=${wizard_easyexplorer_token}
-SHAREPATH=${wizard_EasyExplorer_path}
-
-EOF
 exit 0 

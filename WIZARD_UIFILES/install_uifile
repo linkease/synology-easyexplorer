@@ -15,12 +15,12 @@
 			},
 			{
 				"type": "textfield",
-				"desc": "本地同步路径设置 (e.g. /volume1/Share)",
+				"desc": "本地同步路径设置 (e.g. /volume1/Downloads)",
 				"subitems": [
 					{
 						"key": "wizard_EasyExplorer_path",
 						"desc": "本地同步路径",
-						"defaultValue": "/volume1/Share"
+						"defaultValue": "/volume1/Downloads"
 					}
 				]
 			}
