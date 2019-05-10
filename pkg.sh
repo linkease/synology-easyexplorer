@@ -1,6 +1,25 @@
 #!/bin/sh
 BUILDDIR=$(cd `dirname $0`;pwd)
 
+VAR=$1
+ARCH=
+case "$VAR" in
+    *_x86)
+        ARCH=x86
+        cp $BUILDDIR/x86/INFO $BUILDDIR/
+        cp $BUILDDIR/x86/easyexplorer $BUILDDIR/package/bin/
+        ;;
+    *_arm)
+        ARCH=arm
+        ;;
+    *)
+        echo "not support arch, usage: ./pkg.sh easyexplorer_x86"
+        exit 1
+        ;;
+esac
+
+
+echo "arch is" $ARCH
 echo "1.清理文件夹"
 rm -rf *.spk
 rm -rf *.tgz
