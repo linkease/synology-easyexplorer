@@ -1,6 +1,10 @@
 # synology-easyexplorer
 EasyExplorer 跨设备、点对点文件传输同步工具 http://koolshare.cn/thread-159997-1-1.html
 
+# 基础教程
+
+https://github.com/koolshare/ddnsto/blob/master/doc/easy-explorer.md
+
 # 链接地址
 
 请把 [nas-ip] 换成自己的　nas 真实　ip
