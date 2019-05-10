@@ -4,7 +4,7 @@
 		"items": [
 			{
 				"type": "textfield",
-				"desc": "如果你没有Token，你需要先到 https://ddns.to 注册。",
+				"desc": "如果你没有Token，你需要先到 https://www.ddnsto.com 注册。",
 				"subitems": [
 					{
 						"key": "wizard_easyexplorer_token",
