@@ -1,8 +1,8 @@
 {
     ".url": {
         "com.App.easyexplorer": {
-            "title": "EasyExplorer",
-            "desc": "EasyExplorer Web 控制台",
+            "title": "易有云",
+            "desc": "易有云控制台",
             "icon": "images/icon_{0}.png",
             "type": "url",
             "protocol": "http",
@@ -11,8 +11,8 @@
             "allUsers": true
         },
         "com.App.easyexplorer2": {
-            "title": "EasyExplorer设置",
-            "desc": "EasyExplorer系统设置",
+            "title": "易有云设置",
+            "desc": "易有云系统设置",
             "icon": "images/icon2_{0}.png",
             "type": "url",
             "protocol": "http",
