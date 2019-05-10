@@ -21,7 +21,7 @@ esac
 
 echo "arch is" $ARCH
 echo "1.清理文件夹"
-rm -rf *.spk
+rm -rf $VAR
 rm -rf *.tgz
 
 echo "2.生成package.tgz"
