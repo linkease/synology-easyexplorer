@@ -5,6 +5,6 @@ description="EasyExplorer是koolshare小宝开发的，支持跨设备、点对�
 maintainer="fw867"
 distributor="Koolshare"
 distributor_url="http://www.koolshare.cn"
-arch="x86 cedarview bromolow broadwell grantley avoton braswell evansport"
+arch="x86 cedarview bromolow broadwell grantley avoton braswell evansport apollolake"
 dsmappname="SYNO.App.easyexplorer"
 install_dep_packages="Perl"
