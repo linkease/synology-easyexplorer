@@ -21,6 +21,7 @@ case "$VAR" in
 esac
 
 
+chmod 755 $BUILDDIR/package/bin/easyexplorer
 echo "arch is" $ARCH
 echo "1.清理文件夹"
 rm -rf $VAR
