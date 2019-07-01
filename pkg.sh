@@ -11,6 +11,8 @@ case "$VAR" in
         ;;
     *_arm)
         ARCH=arm
+        cp $BUILDDIR/arm/INFO $BUILDDIR/
+        cp $BUILDDIR/arm/easyexplorer $BUILDDIR/package/bin/
         ;;
     *)
         echo "not support arch, usage: ./pkg.sh easyexplorer_x86"
