@@ -10,6 +10,6 @@ chown -R admin.users "$SYNOPKG_PKGDEST"
 ln -s "${SYNOPKG_PKGDEST}/web" /usr/syno/synoman/webman/3rdparty/easyexplorer
 chown -R admin.users $SYNOPKG_PKGDEST
 cat >$BINPKG/bin/config.json<<EOF
-{"username":"${wizard_easyexplorer_token}","sharepath":"${wizard_EasyExplorer_path}"}
+{"username":"${wizard_easyexplorer_token}","sharePath":"${wizard_EasyExplorer_path}"}
 EOF
 exit 0 

@@ -16,8 +16,8 @@ BINSTART=${BINPKG}/${BINPATH}/${BINFILE}
 
 case $1 in
 	start)
-		echo "Starting easyexplorer ..."
-		${BINSTART} >/dev/null 2>&1 &
+		echo "Starting easyexplorer ..." >> /tmp/easy-explorer.log
+		${BINSTART} >/tmp/easy-explorer.log 2>&1 &
 		exit 0
 	;;
 	stop)
